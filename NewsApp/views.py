@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import HttpResponse
+from .models import News
 # Create your views here.
 
 
@@ -13,15 +13,27 @@ def Home(request):
     return render(request, 'home.html', context)
 
 
-def News(request):
+def NewsP(request, year):
+
+    obj = News.objects.get(id=1)
 
     context = {
-        "list":["Python", "Java", "C++", "C#", "Kotlin", "Ruby"],
-        "mynum": 40
+        "data": obj
+    
     }
     return render(request, 'news.html', context)
 
-   
+def NewsDate(request, year):
+
+    article_list = News.objects.filter(pub_date__year = year)
+
+
+    context = {
+        'year': year,
+        'article_list': article_list
+    }
+
+    return render(request, 'newsdate.html', context)
 
 
 def Contact(request):
