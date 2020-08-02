@@ -13,7 +13,7 @@ def Home(request):
     return render(request, 'home.html', context)
 
 
-def NewsP(request, year):
+def NewsP(request):
 
     obj = News.objects.get(id=1)
 
