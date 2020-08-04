@@ -9,7 +9,7 @@ def Home(request):
 
     context = {
         "name":"Riya Agrahari",
-        "number": 75792
+        "number": 7579290876
     }
 
     return render(request, 'home.html', context)
@@ -40,6 +40,7 @@ def NewsDate(request, year):
 
 def Contact(request):
     return render(request, 'contact.html')
+<<<<<<< HEAD
 
 def register(request):
     context = {
@@ -58,3 +59,5 @@ def addUser(request):
 
         myregister.save()
     return redirect('home')
+=======
+>>>>>>> 0b8117e119e1e3b4988e0aa71f6537f097c77927
