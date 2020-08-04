@@ -7,7 +7,7 @@ def Home(request):
 
     context = {
         "name":"Riya Agrahari",
-        "number": 75792
+        "number": 7579290876
     }
 
     return render(request, 'home.html', context)
